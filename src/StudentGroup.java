@@ -26,7 +26,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	ArrayList<Student> al = new ArrayList<Student>(Arrays.asList(students));
 	 Iterator itr = al.iterator();
-	
+	LinkedList l1 = new LinkedList(Arrays.aslist(Student);
 	@Override
 	public Student[] getStudents() {
 		al.forEach(Sysstem.out::println);
@@ -68,13 +68,13 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void addFirst(Student student) {
-		al.addFirst(student);
+		ll.addFirst(student);
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
-		al.addLast(student);
+		ll.addLast(student);
 	}
 
 	@Override
@@ -112,30 +112,28 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
-		int count=0;
-		while(itr.hasNext())
-		{
-			count++;
-			
-			if(count==index){
-				al.remove(index);
-			}
+		al.removeRange(index,al.size());
 		}
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+		int n=al.indexOf(student);
+		removeFromIndex(n);
 	}
 
 	@Override
 	public void removeToIndex(int index) {
 		// Add your implementation here
+		a1.removeRange(0,index);
 	}
 
 	@Override
 	public void removeToElement(Student student) {
 		// Add your implementation here
+		int n=al.indexOf(student);
+		removeToIndex(n);
 	}
 
 	@Override
@@ -181,7 +179,7 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student getNextStudent(Student student) {
-		int n=al.index(student);
+		int n=al.indexOf(student);
 		//int c=0;
 		getStudent(n+1);
 		return null;
