@@ -19,60 +19,108 @@ public class StudentGroup implements StudentArrayOperation {
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
 	 */
+	
 	public StudentGroup(int length) {
 		this.students = new Student[length];
 	}
 
+	ArrayList<Student> al = new ArrayList<Student>(Arrays.asList(students));
+	 Iterator itr = al.iterator();
+	
 	@Override
 	public Student[] getStudents() {
-		// Add your implementation here
+		al.forEach(Sysstem.out::println);
 		return null;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
-		// Add your implementation here
+		al.add(students);
 	}
 
 	@Override
 	public Student getStudent(int index) {
-		// Add your implementation here
+		int count=0;
+		while(itr.hasNext())
+		{
+			count++;
+			Object element = itr.next();
+			if(count==index){
+				System.out.println(element);
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
+		int count=0;
 		// Add your implementation here
+		while(itr.hasNext())
+		{
+			count++;
+			
+			if(count==index){
+				al.add(student);
+			}
+		}
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		// Add your implementation here
+		al.addFirst(student);
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+		al.addLast(student);
 	}
 
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
+		while(itr.hasNext())
+		{
+			count++;
+			
+			if(count==index){
+				al.add(student);
+			}
+		}
 	}
 
 	@Override
 	public void remove(int index) {
-		// Add your implementation here
+		int count=0;
+		while(itr.hasNext())
+		{
+			count++;
+			
+			if(count==index){
+				al.remove(index);
+			}
+		}
+		
 	}
 
 	@Override
 	public void remove(Student student) {
-		// Add your implementation here
+		al.remove(student);
 	}
 
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+		int count=0;
+		while(itr.hasNext())
+		{
+			count++;
+			
+			if(count==index){
+				al.remove(index);
+			}
+		}
 	}
 
 	@Override
@@ -133,7 +181,9 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student getNextStudent(Student student) {
-		// Add your implementation here
+		int n=al.index(student);
+		//int c=0;
+		getStudent(n+1);
 		return null;
 	}
 }
